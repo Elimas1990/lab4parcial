@@ -1,0 +1,8 @@
+<!--div *ngFor="let region of regiones">
+    <button class="btn btn-primary">{{region.region}}</button>
+</div-->
+<div class="btn-group">
+    <button class="btn btn-primary" (click)="selectRegion('Africa')">Africa</button>
+    <button class="btn btn-primary" (click)="selectRegion('Europe')">Europa</button>
+    <button class="btn btn-primary" (click)="selectRegion('Asia')">Asia</button>
+</div>
