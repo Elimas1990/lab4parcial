@@ -6,7 +6,7 @@
     </thead>
     <tbody *ngFor="let pelicula of peliculas">
         <td>{{pelicula.nombre}}</td>    
-        <td><img [src]="pelicula.foto" ></td>
+        <td><img [src]="pelicula.foto" class="img img-peli" ></td>
         <td><button class="btn btn-info" (click)="verDetalle(pelicula)">Detalle</button></td>
     </tbody>
 </table>
