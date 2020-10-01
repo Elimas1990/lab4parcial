@@ -1,0 +1,12 @@
+<table class="table">
+    <thead class="thead-dark">
+        <th>Nombre</th>
+        <th>Foto</th>
+        <th></th>
+    </thead>
+    <tbody *ngFor="let pelicula of peliculas">
+        <td>{{pelicula.nombre}}</td>    
+        <td><img [src]="pelicula.foto" ></td>
+        <td><button class="btn btn-info" (click)="verDetalle(pelicula)">Detalle</button></td>
+    </tbody>
+</table>
