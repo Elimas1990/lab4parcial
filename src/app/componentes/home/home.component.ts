@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   listado =[];
   regionOpc:string;
 
-  constructor(private miservicio:MiservicioService) { }
+  constructor(public miservicio:MiservicioService) { }
 
   ngOnInit(): void {
     this.miservicio.obtenerPaises().subscribe(
