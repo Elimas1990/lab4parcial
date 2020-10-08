@@ -24,7 +24,7 @@ export class AltaActorComponent implements OnInit {
       nombre:this.actor.nombre,
       apellido:this.actor.apellido,
       nacionalidad:this.actor.nombre,
-      fechaJuego:firestore.Timestamp.fromDate(new Date())
+      fechaNacimiento:firestore.Timestamp.fromDate(this.actor.fechaNacimeinto)
     })
   }
 
