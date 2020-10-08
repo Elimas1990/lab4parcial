@@ -13,6 +13,16 @@ import { TablaPeliculaComponent } from './componenteparcial/tabla-pelicula/tabla
 import { BienvenidoComponent } from './componenteparcial/bienvenido/bienvenido.component';
 import { AltaComponent } from './componenteparcial/peliculas/alta/alta.component';
 import { ListadoComponent } from './componenteparcial/actor/listado/listado.component';
+import { TablaActoresComponent } from './componenteparcial/actor/tabla-actores/tabla-actores.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { TablaPaisesComponent } from './cparcial/tabla-paises/tabla-paises.component';
+import { AltaActorComponent } from './cparcial/alta-actor/alta-actor.component';
+import { PrincipalComponent } from './cparcial/principal/principal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +35,21 @@ import { ListadoComponent } from './componenteparcial/actor/listado/listado.comp
     TablaPeliculaComponent,
     BienvenidoComponent,
     AltaComponent,
-    ListadoComponent
+    ListadoComponent,
+    TablaActoresComponent,
+    TablaPaisesComponent,
+    AltaActorComponent,
+    PrincipalComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
