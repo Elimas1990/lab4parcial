@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { firestore } from 'firebase';
+import {Actor} from '../../actor';
 
 @Component({
   selector: 'app-alta-actor',
@@ -7,10 +10,22 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AltaActorComponent implements OnInit {
 
+  actor = new Actor;
   @Input() pais:any;
-  constructor() { }
+  constructor(private db:AngularFirestore) { 
+  }
 
   ngOnInit(): void {
+  }
+  guardarActor(){
+    this.actor.nacionalidad=this.pais;
+    console.log(this.actor);
+    this.db.collection('resultJuegos').add({
+      nombre:this.actor.nombre,
+      apellido:this.actor.apellido,
+      nacionalidad:this.actor.nombre,
+      fechaJuego:firestore.Timestamp.fromDate(new Date())
+    })
   }
 
 }
