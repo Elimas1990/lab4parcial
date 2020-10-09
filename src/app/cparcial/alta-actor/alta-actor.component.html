@@ -36,7 +36,7 @@
   <div class="row">
     <div class="col-md-6 mb-3">
       <label for="nacionalidad">Nacionalidad</label>
-      <input type="text" class="form-control" id="nacionalidad" placeholder="" value="" [(ngModel)]="pais"  required>
+      <input type="text" class="form-control" id="nacionalidad" placeholder="" value="" [(ngModel)]="pais"  readonly>
       <div class="invalid-feedback">
         Valid first name is required.
       </div>
@@ -51,11 +51,11 @@
   </div>
   <div class="d-block my-3">
     <div class="custom-control custom-radio">
-      <input id="masculino" name="genero" type="radio" class="custom-control-input" checked required>
+      <input id="masculino" name="genero" type="radio" class="custom-control-input" value="M" [(ngModel)]="actor.sexo" required>
       <label class="custom-control-label" for="masculino">Masculino</label>
     </div>
     <div class="custom-control custom-radio">
-      <input id="femenino" name="genero" type="radio" class="custom-control-input" required>
+      <input id="femenino" name="genero" type="radio" class="custom-control-input" value="F" [(ngModel)]="actor.sexo" required>
       <label class="custom-control-label" for="femenino">Femenino</label>
     </div>
   </div>

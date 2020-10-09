@@ -1,3 +1,4 @@
+import { sfExtensionData } from '@angular/compiler-cli/src/ngtsc/shims';
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { firestore } from 'firebase';
@@ -19,14 +20,14 @@ export class AltaActorComponent implements OnInit {
   }
   guardarActor(){
     this.actor.nacionalidad=this.pais;
-    console.log(this.actor);
-    this.db.collection('resultJuegos').add({
+    this.db.collection('actores').add({
       nombre:this.actor.nombre,
       apellido:this.actor.apellido,
-      nacionalidad:this.actor.nombre,
+      nacionalidad:this.actor.nacionalidad,
       domicilio:this.actor.domicilio,
-      fechaNacimiento:firestore.Timestamp.fromDate(this.actor.fechaNacimeinto),
-      foto:this.actor.foto
+      fechaNacimiento:this.actor.fechaNacimeinto,
+      foto:this.actor.foto,
+      sexo:this.actor.sexo
     })
   }
 

@@ -1,9 +1,10 @@
 <h4 class="d-flex justify-content-between align-items-center mb-3">
     <span class="text-muted">Paises</span>
 </h4>
-<ul class="list-group mb-3" *ngFor="let pais of paises.slice(0, 4);">
+<div style="height: 25vw;" class="overflow-auto">
+<ul class="list-group mb-3" *ngFor="let pais of paises.slice(0, 10);" >
     <li class="list-group-item d-flex justify-content-between lh-condensed">
-       <div>
+       <div  >
             <h6 class="my-0">{{pais.name}}</h6>
             <img [src]="pais.flag" class="img" alt="" style="height:50px;width: 100px;">
             <small class="text-muted float"><button class="btn btn-primary" (click)="cargaPais(pais.name)">Cargar Pais</button></small>
@@ -11,3 +12,4 @@
     </li>
 
 </ul>
+</div>
