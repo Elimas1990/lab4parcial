@@ -9,10 +9,18 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from 'src/environments/environment';
+import { BienvenidoComponent } from './page/bienvenido/bienvenido.component';
+import { LoginComponent } from './page/login/login.component';
+import { AltarepartidoresComponent } from './page/altarepartidores/altarepartidores.component';
+import { TablapaisesComponent } from './page/altarepartidores/tablapaises/tablapaises.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BienvenidoComponent,
+    LoginComponent,
+    AltarepartidoresComponent,
+    TablapaisesComponent
   ],
   imports: [
     BrowserModule,

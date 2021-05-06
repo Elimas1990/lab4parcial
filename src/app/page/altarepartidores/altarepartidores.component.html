@@ -1,0 +1,99 @@
+
+    
+<div class="container" style="margin-top: 50px;">
+    <main>
+      <div class="py-5 text-center">
+        
+        <h2>Checkout form</h2>
+        <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+      </div>
+  
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Your cart</span>
+            <span class="badge bg-primary rounded-pill">3</span>
+          </h4>
+          
+          <ul class="list-group mb-3" style="height: 500px; overflow: auto;">
+            <app-tablapaises (paisSelect)="paisSelect($event)"></app-tablapaises>
+
+          </ul>
+  
+         
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Alta Repartidor</h4>
+          <form name="form" [formGroup]="formEncuesta" (ngSubmit)="formEncuesta.valid">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-8">
+                    
+                    <input type="text"  class="form-control mb-3" placeholder="Nombre" 
+                    formControlName="nombre"
+                    [ngClass]="{'is-invalid':formEncuesta.get('nombre').touched && formEncuesta.get('nombre').invalid}" />
+                    <div class="invalid-feedback" *ngIf="formEncuesta.get('nombre').touched && formEncuesta.get('nombre').errors?.required">
+                        El nombre es requerido
+                    </div>
+                  
+                    <input type="number"  class="form-control mb-3" placeholder="Edad" 
+                    formControlName="edad"
+                    [ngClass]="{'is-invalid':formEncuesta.get('edad').touched && formEncuesta.get('edad').invalid}" />
+                    <div class="invalid-feedback" *ngIf="formEncuesta.get('edad').touched && formEncuesta.get('edad').errors?.required">
+                        La edad es requerida
+                    </div>
+                    <div class="invalid-feedback" *ngIf="formEncuesta.get('edad').touched && formEncuesta.get('edad').errors?.max || formEncuesta.get('edad').errors?.min">
+                        La edad debe ser mayor de 18 y menor de 99
+                    </div>
+                    <input type="number"  class="form-control mb-3" placeholder="dni" 
+                    formControlName="dni"
+                    [ngClass]="{'is-invalid':formEncuesta.get('dni').touched && formEncuesta.get('dni').invalid}" />
+                    <div class="invalid-feedback" *ngIf="formEncuesta.get('dni').touched && formEncuesta.get('dni').errors?.required">
+                        El dni es requerido
+                    </div>
+                    <div class="invalid-feedback" *ngIf="formEncuesta.get('dni').touched && formEncuesta.get('dni').errors?.max">
+                        El numero de dni tiene que tener como maximo 10 caracteres
+                    </div>
+    
+                    <input type="number"  class="form-control mb-3" placeholder="cdtransporte" 
+                    formControlName="cdtransporte"
+                    [ngClass]="{'is-invalid':formEncuesta.get('cdtransporte').touched && formEncuesta.get('cdtransporte').invalid}" />
+                    <div class="invalid-feedback" *ngIf="formEncuesta.get('cdtransporte').touched && formEncuesta.get('cdtransporte').errors?.required">
+                        La edad es requerida
+                    </div>
+    
+                    <input type="text"  class="form-control mb-3" placeholder="Pais" 
+                    formControlName="pais"
+                    [ngClass]="{'is-invalid':formEncuesta.get('pais').touched && formEncuesta.get('pais').invalid}" />
+                    <div class="invalid-feedback" *ngIf="formEncuesta.get('pais').touched && formEncuesta.get('pais').errors?.required">
+                        El pais es requerido
+                    </div>
+    
+                    Unidad Propia
+                    <input type="checkbox"  class="mb-3" 
+                    formControlName="upropia"/>
+                
+                    <div class="text-center my-3">
+                        <div class="btn-group shadow">
+                            <button type="button" class="btn btn-info"  type="submit" (click)="guardarForm()" [disabled]="!formEncuesta.valid">Enviar formulario</button>
+                        </div>
+                    </div>
+                    <div *ngIf="errorUsuario" class="alert alert-danger box-msg" role="alert">
+                        <strong>Error!</strong> Datos no validos volver a intentar
+                    </div>
+                    <div *ngIf="seEnvioFormulario" class="alert alert-success">En formulario se envio correctamente!</div>
+                </div>
+  
+            </div>
+        </form>
+          
+        </div>
+      </div>
+    </main>
+
+  
+
+<div class="container" style="margin-top: 100px;">
+    
+    
+    
+</div>

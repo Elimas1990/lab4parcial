@@ -1,0 +1,7 @@
+<li class="list-group-item d-flex justify-content-between lh-sm" *ngFor="let d of listaPaises" (click)="enviarPais(d.name)">
+    <div>
+      <h6 class="my-0">{{d.name}}</h6>
+      <small class="text-muted">Brief description</small>
+    </div>
+    <img src="{{d.flag}}" alt="" style="width: 60px;height: 40px;">
+  </li>
