@@ -1,0 +1,8 @@
+<p>datos works!</p>
+<div *ngIf="rapartidor">
+    <p>DNI: {{rapartidor.dni}}</p>
+    <p>Edad: {{rapartidor.edad}}</p>
+    <p>Capacidad de transporte: {{rapartidor.cdtransporte}}</p>
+    <p *ngIf="rapartidor.upropia == ''">No tiene unidad propia</p>
+    <p *ngIf="rapartidor.upropia != ''">Tiene unidad propia</p>
+</div>

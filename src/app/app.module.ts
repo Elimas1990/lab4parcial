@@ -14,6 +14,8 @@ import { LoginComponent } from './page/login/login.component';
 import { AltarepartidoresComponent } from './page/altarepartidores/altarepartidores.component';
 import { TablapaisesComponent } from './page/altarepartidores/tablapaises/tablapaises.component';
 import { RapartidordetalleComponent } from './page/rapartidordetalle/rapartidordetalle.component';
+import { DatosComponent } from './page/rapartidordetalle/datos/datos.component';
+import { PaisComponent } from './page/rapartidordetalle/pais/pais.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RapartidordetalleComponent } from './page/rapartidordetalle/rapartidord
     LoginComponent,
     AltarepartidoresComponent,
     TablapaisesComponent,
-    RapartidordetalleComponent
+    RapartidordetalleComponent,
+    DatosComponent,
+    PaisComponent
   ],
   imports: [
     BrowserModule,

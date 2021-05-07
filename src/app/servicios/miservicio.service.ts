@@ -24,7 +24,7 @@ export class MiservicioService {
       this.data=dbfire.collection<any>('/usuarios');
       this.dataRepartidor=dbfire.collection<any>('/repartidores');
       this.usuarios=this.data.valueChanges('/usuarios')
-      this.repartidores=this.data.valueChanges('/repartidores')
+      this.repartidores=this.dataRepartidor.valueChanges('/repartidores')
   }
 
   getApiData(){
@@ -35,7 +35,7 @@ export class MiservicioService {
 
   }
   guardarRepartidor(datos:any):any{
-    return this.dataRepartidor.add({...datos});
+    return this.data.add({...datos});
 
   }
   obtenerUsuario(usr){
