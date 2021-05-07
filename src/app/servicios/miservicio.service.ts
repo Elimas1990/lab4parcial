@@ -15,13 +15,16 @@ export class MiservicioService {
   usuariosHard
 
   data:AngularFirestoreCollection<any>;
+  dataRepartidor:AngularFirestoreCollection<any>;
   usuarios:Observable<any[]>
-
+  repartidores:Observable<any[]>
   constructor(private http:HttpClient,
     private dbfire:AngularFirestore,
     private router:Router) { 
       this.data=dbfire.collection<any>('/usuarios');
+      this.dataRepartidor=dbfire.collection<any>('/repartidores');
       this.usuarios=this.data.valueChanges('/usuarios')
+      this.repartidores=this.data.valueChanges('/repartidores')
   }
 
   getApiData(){
@@ -29,6 +32,10 @@ export class MiservicioService {
   }
   guardarUsuario(datos:any):any{
     return this.data.add({...datos});
+
+  }
+  guardarRepartidor(datos:any):any{
+    return this.dataRepartidor.add({...datos});
 
   }
   obtenerUsuario(usr){

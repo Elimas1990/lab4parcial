@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MiservicioService } from 'src/app/servicios/miservicio.service';
 
 @Component({
   selector: 'app-altarepartidores',
@@ -23,7 +24,7 @@ export class AltarepartidoresComponent implements OnInit {
     pais:new FormControl('',[Validators.required]),
     upropia:new FormControl(''),
   })
-  constructor() { 
+  constructor(private http:MiservicioService) { 
    
   }
 
@@ -31,7 +32,8 @@ export class AltarepartidoresComponent implements OnInit {
   }
 
   guardarForm(){
-    console.log(this.formEncuesta)
+    console.log(this.formEncuesta.getRawValue())
+    this.http.guardarRepartidor(this.formEncuesta.getRawValue())
   }
   paisSelect(pais){
     this.formEncuesta.controls.pais.setValue(pais)

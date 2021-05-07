@@ -13,6 +13,7 @@ import { BienvenidoComponent } from './page/bienvenido/bienvenido.component';
 import { LoginComponent } from './page/login/login.component';
 import { AltarepartidoresComponent } from './page/altarepartidores/altarepartidores.component';
 import { TablapaisesComponent } from './page/altarepartidores/tablapaises/tablapaises.component';
+import { RapartidordetalleComponent } from './page/rapartidordetalle/rapartidordetalle.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TablapaisesComponent } from './page/altarepartidores/tablapaises/tablap
     BienvenidoComponent,
     LoginComponent,
     AltarepartidoresComponent,
-    TablapaisesComponent
+    TablapaisesComponent,
+    RapartidordetalleComponent
   ],
   imports: [
     BrowserModule,
