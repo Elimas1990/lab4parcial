@@ -1,0 +1,18 @@
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col" *ngFor="let pizza of listaPizzas">
+        <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{pizza.nombre}}</h4>
+        </div>
+        <div class="card-body">
+            <h1 class="card-title pricing-card-title">${{pizza.precio}}</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+            <li>Peso aprox: {{pizza.peso}} g</li>
+            <li>Descripcion: {{pizza.descripcion}}</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-danger" (click)="borrarPizza(pizza)">Borrar</button>
+            <button type="button" class="w-100 btn btn-lg btn-outline-success" (click)="modificarPizza(pizza)">Modificar</button>
+        </div>
+        </div>
+    </div>
+</div>

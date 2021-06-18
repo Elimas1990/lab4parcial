@@ -16,6 +16,12 @@ import { TablapaisesComponent } from './page/altarepartidores/tablapaises/tablap
 import { RapartidordetalleComponent } from './page/rapartidordetalle/rapartidordetalle.component';
 import { DatosComponent } from './page/rapartidordetalle/datos/datos.component';
 import { PaisComponent } from './page/rapartidordetalle/pais/pais.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { PizzasComponent } from './page/pizzas/pizzas.component';
+import { CrearpizzaComponent } from './page/pizzas/crearpizza/crearpizza.component';
+import { ModpizzaComponent } from './page/pizzas/modpizza/modpizza.component';
+import { BorrarpizzaComponent } from './page/pizzas/borrarpizza/borrarpizza.component';
+import { MostrarpizzaComponent } from './page/pizzas/mostrarpizza/mostrarpizza.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,13 @@ import { PaisComponent } from './page/rapartidordetalle/pais/pais.component';
     TablapaisesComponent,
     RapartidordetalleComponent,
     DatosComponent,
-    PaisComponent
+    PaisComponent,
+    NavbarComponent,
+    PizzasComponent,
+    CrearpizzaComponent,
+    ModpizzaComponent,
+    BorrarpizzaComponent,
+    MostrarpizzaComponent
   ],
   imports: [
     BrowserModule,

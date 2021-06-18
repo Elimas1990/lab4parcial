@@ -44,6 +44,7 @@ export class AuthService {
     
   }
   async logout(){
+    console.log('hola')
     try{
       await this.auth.signOut();
       localStorage.removeItem('user');

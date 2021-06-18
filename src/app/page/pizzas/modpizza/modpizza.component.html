@@ -1,0 +1,47 @@
+<h5 *ngIf="pizzaAModificar">Pizza a modificar: "{{pizzaAModificar?.nombre}}"</h5>
+<form name="form" [formGroup]="formEncuesta" (ngSubmit)="formEncuesta.valid" *ngIf="pizzaAModificar">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8">
+
+          
+            <input type="number"  class="form-control mb-3" placeholder="Peso" 
+            formControlName="peso"
+            [ngClass]="{'is-invalid':formEncuesta.get('peso').touched && formEncuesta.get('peso').invalid}" />
+            <div class="invalid-feedback" *ngIf="formEncuesta.get('peso').touched && formEncuesta.get('peso').errors?.required">
+                La peso es requerida
+            </div>
+            <div class="invalid-feedback" *ngIf="formEncuesta.get('peso').touched && formEncuesta.get('peso').errors?.max || formEncuesta.get('peso').errors?.min">
+                La pizza debe tener minimo de 500g o maximo de 1000g
+            </div>
+
+
+            <input type="number"  class="form-control mb-3" placeholder="Precio" 
+            formControlName="precio"
+            [ngClass]="{'is-invalid':formEncuesta.get('precio').touched && formEncuesta.get('precio').invalid}" />
+            <div class="invalid-feedback" *ngIf="formEncuesta.get('precio').touched && formEncuesta.get('precio').errors?.required">
+                La edad es requerida
+            </div>
+
+            <textarea type="text"  class="form-control mb-3" placeholder="Descripcion e ingredientes" 
+            formControlName="descripcion"
+            [ngClass]="{'is-invalid':formEncuesta.get('descripcion').touched && formEncuesta.get('descripcion').invalid}" >
+            </textarea>
+            <div class="invalid-feedback" *ngIf="formEncuesta.get('descripcion').touched && formEncuesta.get('descripcion').errors?.required">
+                El descripcion es requerido
+            </div>
+
+    
+        
+            <div class="text-center my-3">
+                <div class="btn-group shadow">
+                    <button type="button" class="btn btn-info"  type="submit" (click)="guardarForm()" [disabled]="!formEncuesta.valid">Enviar formulario</button>
+                </div>
+            </div>
+            <!--<div *ngIf="errorUsuario" class="alert alert-danger box-msg" role="alert">
+                <strong>Error!</strong> Datos no validos volver a intentar
+            </div>
+            <div *ngIf="seEnvioFormulario" class="alert alert-success">En formulario se envio correctamente!</div>-->
+        </div>
+
+    </div>
+</form>

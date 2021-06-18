@@ -12,7 +12,6 @@ export class BienvenidoComponent implements OnInit {
   constructor(private api:MiservicioService) { 
     api.getApiData().subscribe(data =>{
       this.info=data
-      console.log(this.info)
     })
   }
 

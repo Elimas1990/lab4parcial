@@ -16,15 +16,19 @@ export class MiservicioService {
 
   data:AngularFirestoreCollection<any>;
   dataRepartidor:AngularFirestoreCollection<any>;
+  dataPizzas:AngularFirestoreCollection<any>;
   usuarios:Observable<any[]>
   repartidores:Observable<any[]>
+  pizzas:Observable<any[]>
   constructor(private http:HttpClient,
     private dbfire:AngularFirestore,
     private router:Router) { 
       this.data=dbfire.collection<any>('/usuarios');
       this.dataRepartidor=dbfire.collection<any>('/repartidores');
       this.usuarios=this.data.valueChanges('/usuarios')
-      this.repartidores=this.dataRepartidor.valueChanges('/repartidores')
+      this.dataPizzas=dbfire.collection<any>('/pizzas');
+      this.pizzas=this.dataPizzas.valueChanges({ idField: 'eventId' })
+      this.repartidores=this.dataRepartidor.valueChanges({ idField: 'eventId' })
   }
 
   getApiData(){
@@ -35,7 +39,11 @@ export class MiservicioService {
 
   }
   guardarRepartidor(datos:any):any{
-    return this.data.add({...datos});
+    return this.dataRepartidor.add({...datos});
+
+  }
+  guardarPizza(datos:any):any{
+    return this.dataPizzas.add({...datos});
 
   }
   obtenerUsuario(usr){
@@ -43,6 +51,15 @@ export class MiservicioService {
       map(txs => txs.find(txn => txn.usuario === usr))
     );
     
+  }
+
+  async eliminarPizza(id){
+    return await this.dbfire.collection('/pizzas').doc(id).delete();
+  }
+  async modificarPizza(pizza){
+    let id=pizza.id
+    delete pizza.id
+    return await this.dbfire.collection('/pizzas').doc(id).update(pizza);
   }
 
 

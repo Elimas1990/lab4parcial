@@ -34,6 +34,7 @@ export class AltarepartidoresComponent implements OnInit {
   guardarForm(){
     console.log(this.formEncuesta.getRawValue())
     this.http.guardarRepartidor(this.formEncuesta.getRawValue())
+    this.formEncuesta.reset()
   }
   paisSelect(pais){
     this.formEncuesta.controls.pais.setValue(pais)

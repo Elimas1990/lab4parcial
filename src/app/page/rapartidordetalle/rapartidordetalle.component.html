@@ -1,4 +1,4 @@
-<main>
+<main class='mt-5'>
     <div class="container py-4">
       <header class="pb-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
@@ -8,8 +8,8 @@
       </header>
   
       <div class="p-5 mb-4 bg-light rounded-3">
-          <ul >
-            <li *ngFor="let i of listaRepartidores" (click)="selectRepartidor(i)">{{i.nombre}}</li>
+          <ul class="list-group">
+            <button class="list-group-item list-group-item-action" *ngFor="let i of listaRepartidores" (click)="selectRepartidor(i)">{{i.nombre}}</button>
           
           </ul>
       </div>
