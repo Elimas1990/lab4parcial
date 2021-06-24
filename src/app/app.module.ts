@@ -22,6 +22,9 @@ import { CrearpizzaComponent } from './page/pizzas/crearpizza/crearpizza.compone
 import { ModpizzaComponent } from './page/pizzas/modpizza/modpizza.component';
 import { BorrarpizzaComponent } from './page/pizzas/borrarpizza/borrarpizza.component';
 import { MostrarpizzaComponent } from './page/pizzas/mostrarpizza/mostrarpizza.component';
+import { PedidoComponent } from './page/pedido/pedido.component';
+import { ListarepartidoresComponent } from './page/pedido/listarepartidores/listarepartidores.component';
+import { ListapizzasComponent } from './page/pedido/listapizzas/listapizzas.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { MostrarpizzaComponent } from './page/pizzas/mostrarpizza/mostrarpizza.c
     CrearpizzaComponent,
     ModpizzaComponent,
     BorrarpizzaComponent,
-    MostrarpizzaComponent
+    MostrarpizzaComponent,
+    PedidoComponent,
+    ListarepartidoresComponent,
+    ListapizzasComponent
   ],
   imports: [
     BrowserModule,

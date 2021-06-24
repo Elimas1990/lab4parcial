@@ -1,7 +1,14 @@
-<li class="list-group-item d-flex justify-content-between lh-sm" *ngFor="let d of listaPaises" (click)="enviarPais(d)">
-    <div>
-      <h6 class="my-0">{{d.name}}</h6>
-      <small class="text-muted">Brief description</small>
-    </div>
-    <img src="{{d.flag}}" alt="" style="width: 60px;height: 40px;">
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+  <span class="text-primary">Cant Paises</span>
+  <span class="badge bg-primary rounded-pill">{{listaPaises.length}}</span>
+</h4>
+
+<ul class="list-group mb-3" style="height: 500px; overflow: auto;">
+  <li class="list-group-item d-flex justify-content-between lh-sm" *ngFor="let d of listaPaises" (click)="enviarPais(d)">
+      <div>
+        <h6 class="my-0">{{d.name}}</h6>
+        <small class="text-muted">Brief description</small>
+      </div>
+      <img src="{{d.flag}}" alt="" style="width: 60px;height: 40px;">
   </li>
+</ul>
