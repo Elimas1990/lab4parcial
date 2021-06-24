@@ -32,7 +32,7 @@ export class MiservicioService {
   }
 
   getApiData(){
-    return this.http.get('https://api.github.com/users/octaviovillegas')
+    return this.http.get('https://api.github.com/users/esteban1990')
   }
   guardarUsuario(datos:any):any{
     return this.data.add({...datos});

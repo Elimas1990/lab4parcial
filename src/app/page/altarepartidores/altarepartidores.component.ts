@@ -11,6 +11,7 @@ export class AltarepartidoresComponent implements OnInit {
 
 
 
+  objPais:Object
   errorUsuario=false;
   listaJuegos:any[]=[]
   seEnvioFormulario=false;
@@ -32,12 +33,15 @@ export class AltarepartidoresComponent implements OnInit {
   }
 
   guardarForm(){
-    console.log(this.formEncuesta.getRawValue())
-    this.http.guardarRepartidor(this.formEncuesta.getRawValue())
+    let obj=this.formEncuesta.getRawValue()
+    obj.pais=this.objPais
+    
+    this.http.guardarRepartidor(obj)
     this.formEncuesta.reset()
   }
   paisSelect(pais){
-    this.formEncuesta.controls.pais.setValue(pais)
+    this.objPais=pais
+    this.formEncuesta.controls.pais.setValue(pais.name)
   }
 
 }

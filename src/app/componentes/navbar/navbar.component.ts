@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/servicios/auth.service';
 export class NavbarComponent implements OnInit {
 
   userlogueado: Observable<any>=this.authService.auth.user
+  userTipo=localStorage.getItem('tipo')
   userlogin=false
   constructor(private authService:AuthService,
     private router:Router) {

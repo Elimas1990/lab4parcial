@@ -8,11 +8,23 @@
         </div>
       </header>
     <main>
-        <app-crearpizza (pizzaGenerada)="guardarPizza($event)"></app-crearpizza>
-        <app-mostrarpizza [listaPizzas]="listaPizzas" (pizzaBorrar)="pizzaBorrar($event)" (pizzaMod)="pizzaMod($event)"></app-mostrarpizza>
-        <app-modpizza [pizzaAModificar]="pizzaAModificar" (pizzaMod)="guardarCambioPizza($event)"></app-modpizza>
+      <div class="row">
+        <div class="col" [ngClass]="{'col-lg-6': mostrarCol, 'col': mostrarCol}">
+          <app-crearpizza (pizzaGenerada)="guardarPizza($event)" ></app-crearpizza>
+        </div>
+        <div class="col-lg-6">
+          <app-modpizza [pizzaAModificar]="pizzaAModificar" (pizzaMod)="guardarCambioPizza($event)"  ></app-modpizza>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <app-mostrarpizza [listaPizzas]="listaPizzas" (pizzaBorrar)="pizzaBorrar($event)" (pizzaMod)="pizzaMod($event)"></app-mostrarpizza>
+        </div>
+      </div>
+        
+        
     
-        <h2 class="display-6 text-center mb-4">Compare plans</h2>
+        <!--<h2 class="display-6 text-center mb-4">Compare plans</h2>
     
         <div class="table-responsive">
           <table class="table text-center">
@@ -66,6 +78,6 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div>-->
       </main>
 </div>

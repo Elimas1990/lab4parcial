@@ -22,9 +22,9 @@
           <a class="nav-link" routerLink='/detallerepartidor' *ngIf="userlogin">Listado repartidor</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink='/pizzas' *ngIf="userlogin">Pizzas</a>
+          <a class="nav-link" routerLink='/pizzas' *ngIf="userlogin && userTipo == 'administrador'">Pizzas</a>
         </li>
       </ul>
   
-    </div>
-  </nav>
+  </div>
+</nav>

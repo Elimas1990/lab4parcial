@@ -44,10 +44,10 @@ export class AuthService {
     
   }
   async logout(){
-    console.log('hola')
     try{
       await this.auth.signOut();
       localStorage.removeItem('user');
+      localStorage.removeItem('tipo');
     }
     catch (error){
       console.log(console.error())

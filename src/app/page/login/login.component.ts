@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   email:string;
   pass:string;
+  tipo:string;
   constructor(private db:MiservicioService,
     private authService:AuthService,
     private router:Router) { }
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
   autocompletarUsuario(){
     this.email="admin@admin.com"
     this.pass="123456"
+    this.tipo="administrador"
   }
 
   userLogueado={email :'',pass:''}
@@ -36,6 +38,7 @@ export class LoginComponent implements OnInit {
       const user= this.authService.login(this.email,this.pass)
       console.log(user)
       localStorage.setItem('user',this.email)
+      localStorage.setItem('tipo',this.tipo)
      if(user){
       this.router.navigate([''])
      }

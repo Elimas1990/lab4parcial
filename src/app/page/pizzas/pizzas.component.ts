@@ -19,8 +19,10 @@ export class PizzasComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  mostrarCol=false
 
   pizzaMod(pizza){
+    this.mostrarCol=true
     this.pizzaAModificar=pizza
     //this.miService.eliminarPizza(pizza.eventId)
   }
@@ -33,7 +35,7 @@ export class PizzasComponent implements OnInit {
   }
 
   guardarCambioPizza(pizza){
-    
+    this.mostrarCol=false
     this.miService.modificarPizza(pizza)
   }
 

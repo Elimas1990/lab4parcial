@@ -7,11 +7,14 @@
         <div class="card-body">
             <h1 class="card-title pricing-card-title">${{pizza.precio}}</h1>
             <ul class="list-unstyled mt-3 mb-4">
-            <li>Peso aprox: {{pizza.peso}} g</li>
-            <li>Descripcion: {{pizza.descripcion}}</li>
+                <li>Peso aprox: {{pizza.peso}} g</li>
+                <li>Descripcion: {{pizza.descripcion}}</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-danger" (click)="borrarPizza(pizza)">Borrar</button>
-            <button type="button" class="w-100 btn btn-lg btn-outline-success" (click)="modificarPizza(pizza)">Modificar</button>
+            <div class="btn-group w-100">
+                <button type="button" class="w-100 btn btn-lg btn-outline-danger" (click)="borrarPizza(pizza)">Borrar</button>
+                <button type="button" class="w-100 btn btn-lg btn-outline-success" (click)="modificarPizza(pizza)">Modificar</button>
+            </div>
+            
         </div>
         </div>
     </div>
